@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#login_form{
+	width: 300px;
+	border: 1px solid white;
+	background: #cccccc;
+	margin: 250px auto 0;
+	padding: 1em;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	
+}
+
+h1,h2{
+	margin-top: 0;
+	text-align: center;
+}
+
+input[type=text],input[type=password]{
+ display: block;
+ margin: 0 0 1em 0;
+ width: 280px;
+ border: 5px;
+ -webkit-border-radius: 7px;
+ -moz-border-radius: 7px;
+ border-radius: 7px;
+ padding: 1em;
+}
+
+input[type=submit]{
+border: none;
+margin-right: 1em;
+padding: 6px;
+text-decoration: none;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+}
+
+#logo {
+	padding-bottom: 3em;	
+}
