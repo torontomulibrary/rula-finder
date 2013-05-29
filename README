@@ -37,7 +37,7 @@ Modify the following files
 		- Function "catalogue_info" contains hardcoded values designed to work with Ryerson's implementation of Millennium.
 		  It currently uses screenscraping, so the pre-made regular expressions may not work for your implementation.
 		
-		**Note: We encourage the community to produce a Z39.50 version of this function so it can be more easily/widely adpoted by library's with less technical staff.
+		**Note: We encourage the community to produce a Z39.50 version of this function so it can be more easily/widely adpoted by libraries with less technical staff.
 
 
 
