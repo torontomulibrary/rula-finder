@@ -16,7 +16,6 @@
 *
 */
 ?>
-
 <?php
 
 class Search extends CI_Controller{
@@ -46,16 +45,7 @@ class Search extends CI_Controller{
 		}
 		
 		
-		// copy all parameters that start with s.
-		$query_arr = array();
-
-		// PhP replaces . with _ in _REQUEST keys
-		// http://www.php.net/manual/en/language.variables.external.php
-
-		// fallback - simply 'q'
-		if ($this->input->post('q') !== FALSE) {
-			$query_arr['s.q'] = $this->input->post('q');
-		}
+		
 
 		if($this->input->post('page')!== FALSE && is_numeric($this->input->post('page')) && $this->input->post('page') > 0){
 			$page = $this->input->post('page');
@@ -64,25 +54,18 @@ class Search extends CI_Controller{
 			$page = 1;
 		}
 		
-		if (!isset($query_arr['s.q'])) {
-			$query_arr['s.q'] = '';
-		}
-
-		foreach ($_REQUEST as $key => $value) {
-			if (strpos($key, "t_") === 0) {
-				$query_arr['s.q'] = $query_arr['s.q'] . " " . substr($key, 2) . ":(" . $value . ")";
-				continue;
-			}
-
-			// replace the first _ with a .?  
-			$count = 1;
-			$key2 = str_replace('_', '.', $key, $count);
-			$query_arr[$key2] = $value;
-		}
+		$options = array(
+			'filters' => array('Library,Internet Resource,true', 'SourceType,Library Catalog,f'),
+			'pageNumber' => $page
+		);
 		
-		$summon = new Summon(SUMMON_API_ID, SUMMON_API_KEY);
 		
-		$result = $summon->query($query_arr, null, $page);
+		
+		$summon = new SerialsSolutions_Summon_CURL(SUMMON_API_ID, SUMMON_API_KEY);
+		$query = new SerialsSolutions_Summon_Query($this->input->post('s_q'), $options);
+		
+		$result = json_encode($summon->query($query)); 
+		
 		header("Content-Type: application/json");
 
 		$reply = $result;

@@ -15,7 +15,8 @@
 *along with RULA Bookfinder.  If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?><?php
+?>
+<?php
 class Model_Log extends CI_Model {
 	function __construct(){
         parent::__construct();

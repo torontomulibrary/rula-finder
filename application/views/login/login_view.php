@@ -15,7 +15,8 @@
 *along with RULA Bookfinder.  If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 
 <html lang="en">
 	<head>

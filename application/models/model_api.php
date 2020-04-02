@@ -157,6 +157,7 @@ class Model_Api extends CI_Model {
 		$catalogue = $this->catalogue_info($callno); 
 		
 		
+		
 		//Convert to long integer first
 		$call_int = convert_callnum($catalogue['callNumber']);
 		

@@ -16,9 +16,9 @@
 *
 */
 ?>
-
 <?php
 	function convert_callnum($callnum_str){
+		$callnum_str = str_replace('%20', ' ', $callnum_str);
 		$callnum_str = strtoupper($callnum_str);
 		
 		//IGNORE 'Per.' in call numbers (eg. Per. TJ1180.A1 M329 1999)

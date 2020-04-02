@@ -16,7 +16,6 @@
 *
 */
 ?>
-
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Main extends CI_Controller {
@@ -44,6 +43,12 @@ class Main extends CI_Controller {
 	function index(){
 		$data['floors'] = $this->model_front_end->get_floors();
 		$this->load->view('bookfinder_main.php', $data);
+	}
+	
+	function callno_value(){
+		$this->load->helper('call_number_helper');
+		
+		echo convert_callnum($this->uri->segment(3));
 	}
 	
 

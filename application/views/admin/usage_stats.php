@@ -16,7 +16,7 @@
 *
 */
 ?>
-<? //HEADER DATA ?>
+<?php //HEADER DATA ?>
 <?php ob_start();?>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -74,7 +74,7 @@
 		function mobile_desktop() {
 			var data = google.visualization.arrayToDataTable([
 				['Task', 'Hours per Day'],
-				<?
+				<?php 
 					foreach($device->result() as $row){
 						print "['Desktop', ".$row->desktop ."],";
 						print "['Mobile', ".$row->mobile ."],";
@@ -144,7 +144,7 @@
 
 <?php $head = ob_get_contents();ob_end_clean();$this->template->set('headers', $head);?>
 
-<? //BODY DATA ?>
+<?php //BODY DATA ?>
 <?php ob_start();?>
 
 <h3>Set Date Range</h3>

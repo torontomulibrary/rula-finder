@@ -16,10 +16,10 @@
 *
 */
 ?>
-<? //HEADER DATA ?>
+<?php //HEADER DATA ?>
 <?php ob_start();?>
 
-<? foreach($crud->css_files as $file): ?>
+<?php foreach($crud->css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>
 <?php foreach($crud->js_files as $file): ?>
@@ -28,7 +28,7 @@
 
 <?php $head = ob_get_contents();ob_end_clean();$this->template->set('headers', $head);?>
 
-<? //BODY DATA ?>
+<?php //BODY DATA ?>
 <?php ob_start();?>
 
 <?= $crud->output ?>

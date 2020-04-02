@@ -1,4 +1,3 @@
-
 <?php
 /*This file belongs to the RULA BookFinder Application.
 *
@@ -16,7 +15,8 @@
 *along with RULA Bookfinder.  If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?><?php
+?>
+<?php
 class Model_Front_End extends CI_Model {
 	function get_floors(){
 		$this->db->order_by('weight');
